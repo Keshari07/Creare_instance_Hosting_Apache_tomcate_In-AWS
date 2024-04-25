@@ -1,0 +1,131 @@
+https://downloads.apache.org/tomcat/tomcat-9/v9.0.71/bin/apache-tomcat-9.0.71.tar.gz.asc
+
+
+[root@ip-101-61-9-62 ~]# wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.71/bin/apache-tomcat-9.0.71.tar.gz        
+wget https://downloads.apache.org/tomcat/tomcat-9/v9.0.71/bin/apache-tomcat-9.0.71.tar.gz
+--2023-01-25 12:15:31--  https://downloads.apache.org/tomcat/tomcat-9/v9.0.71/bin/apache-tomcat-9.0.71.tar.gz
+Resolving downloads.apache.org (downloads.apache.org)... 88.99.95.219, 135.181.214.104, 2a01:4f9:3a:2c57::2, ...
+Connecting to downloads.apache.org (downloads.apache.org)|88.99.95.219|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 11613392 (11M) [application/x-gzip]
+Saving to: ‘apache-tomcat-9.0.71.tar.gz’
+
+100%[=========================================================================================================================================================================>] 11,613,392  6.59MB/s   in 1.7s   
+
+2023-01-25 12:15:34 (6.59 MB/s) - ‘apache-tomcat-9.0.71.tar.gz’ saved [11613392/11613392]
+
+[root@ip-101-61-9-62  ~]# ls
+apache-tomcat-9.0.71.tar.gz
+[root@ip-101-61-9-62  ~]# tar -zxvf apache-tomcat-9.0.71.tar.gz
+[root@ip-101-61-9-62  ~]# ls
+apache-tomcat-9.0.71  apache-tomcat-9.0.71.tar.gz
+[root@ip-101-61-9-62  ~]# cd apache-tomcat-9.0.71/
+[root@ip-101-61-9-62  apache-tomcat-9.0.71]# ls
+bin  BUILDING.txt  conf  CONTRIBUTING.md  lib  LICENSE  logs  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  temp  webapps  work
+[root@ip-101-61-9-62  apache-tomcat-9.0.71]# cd bin/
+[root@ip-101-61-9-62  bin]# ls
+bootstrap.jar  catalina-tasks.xml  commons-daemon.jar            configtest.sh  digest.sh     setclasspath.bat  shutdown.sh  tomcat-juli.jar       tool-wrapper.sh
+catalina.bat   ciphers.bat         commons-daemon-native.tar.gz  daemon.sh      makebase.bat  setclasspath.sh   startup.bat  tomcat-native.tar.gz  version.bat
+catalina.sh    ciphers.sh          configtest.bat                digest.bat     makebase.sh   shutdown.bat      startup.sh   tool-wrapper.bat      version.sh
+[root@ip-101-61-9-62  bin]# cd
+[root@ip-101-61-9-62  ~]# ls
+apache-tomcat-9.0.71  apache-tomcat-9.0.71.tar.gz
+[root@ip-101-61-9-62  ~]# cd apache-tomcat-9.0.71/
+[root@ip-101-61-9-62  apache-tomcat-9.0.71]# ls
+bin  BUILDING.txt  conf  CONTRIBUTING.md  lib  LICENSE  logs  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  temp  webapps  work
+[root@ip-101-61-9-62  apache-tomcat-9.0.71]# cd bin/
+[root@ip-101-61-9-62 bin]# ls
+bootstrap.jar  catalina-tasks.xml  commons-daemon.jar            configtest.sh  digest.sh     setclasspath.bat  shutdown.sh  tomcat-juli.jar       tool-wrapper.sh
+catalina.bat   ciphers.bat         commons-daemon-native.tar.gz  daemon.sh      makebase.bat  setclasspath.sh   startup.bat  tomcat-native.tar.gz  version.bat
+catalina.sh    ciphers.sh          configtest.bat                digest.bat     makebase.sh   shutdown.bat      startup.sh   tool-wrapper.bat      version.sh
+[root@ip-101-61-9-62  bin]# chmod u+x startup.sh 
+[root@ip-101-61-9-62  bin]# chmod u+x shutdown.sh 
+[root@ip-101-61-9-62  bin]# cd ..
+[root@ip-101-61-9-62  apache-tomcat-9.0.71]# ls
+bin  BUILDING.txt  conf  CONTRIBUTING.md  lib  LICENSE  logs  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  temp  webapps  work
+[root@ip-101-61-9-62  apache-tomcat-9.0.71]# cd conf/
+[root@ip-101-61-9-62  conf]# ls
+catalina.policy  catalina.properties  context.xml  jaspic-providers.xml  jaspic-providers.xsd  logging.properties  server.xml  tomcat-users.xml  tomcat-users.xsd  web.xml
+[root@ip-101-61-9-62  conf]# vim server.xml 
+[root@ip-101-61-9-62  conf]# cd ../bin/
+[root@ip-101-61-9-62  bin]# la
+bash: la: command not found
+[root@ip-101-61-9-62  bin]# ls
+bootstrap.jar  catalina-tasks.xml  commons-daemon.jar            configtest.sh  digest.sh     setclasspath.bat  shutdown.sh  tomcat-juli.jar       tool-wrapper.sh
+catalina.bat   ciphers.bat         commons-daemon-native.tar.gz  daemon.sh      makebase.bat  setclasspath.sh   startup.bat  tomcat-native.tar.gz  version.bat
+catalina.sh    ciphers.sh          configtest.bat                digest.bat     makebase.sh   shutdown.bat      startup.sh   tool-wrapper.bat      version.sh
+[root@ip-101-61-9-62  bin]# ./startup.sh
+Using CATALINA_BASE:   /root/apache-tomcat-9.0.71
+Using CATALINA_HOME:   /root/apache-tomcat-9.0.71
+Using CATALINA_TMPDIR: /root/apache-tomcat-9.0.71/temp
+Using JRE_HOME:        /
+Using CLASSPATH:       /root/apache-tomcat-9.0.71/bin/bootstrap.jar:/root/apache-tomcat-9.0.71/bin/tomcat-juli.jar
+Using CATALINA_OPTS:   
+Tomcat started.
+[root@ip-101-61-9-62  bin]# ip a
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
+    inet 127.0.0.1/8 scope host lo
+       valid_lft forever preferred_lft forever
+    inet6 ::1/128 scope host 
+       valid_lft forever preferred_lft forever
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 9001 qdisc pfifo_fast state UP group default qlen 1000
+    link/ether 0a:87:fe:82:d2:90 brd ff:ff:ff:ff:ff:ff
+    inet 101-61-9-62 /20 brd 101-61-9-62 .255 scope global dynamic eth0
+       valid_lft 2457sec preferred_lft 2457sec
+    inet6 fe80::887:feff:fe82:d290/64 scope link 
+       valid_lft forever preferred_lft forever
+[root@ip-101-61-9-62  bin]# cd
+[root@ip-101-61-9-62  ~]# ls
+apache-tomcat-9.0.71  apache-tomcat-9.0.71.tar.gz
+[root@ip-101-61-9-62  ~]# cd apache-tomcat-9.0.71/
+[root@ip-101-61-9-62  apache-tomcat-9.0.71]# ls
+bin  BUILDING.txt  conf  CONTRIBUTING.md  lib  LICENSE  logs  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  temp  webapps  work
+[root@ip-101-61-9-62  apache-tomcat-9.0.71]# cd webapps/
+[root@ip-101-61-9-62  webapps]# ls
+docs  examples  host-manager  manager  ROOT
+[root@ip-101-61-9-62  webapps]# mkdir web1
+[root@ip-101-61-9-62 webapps]# mkdir web2
+[root@ip-101-61-9-62  webapps]# cd web1
+[root@ip-101-61-9-62  web1]# vim index.html
+[root@ip-101-61-9-62  web1]# cd ..
+[root@ip-101-61-9-62  webapps]# cd web2
+[root@ip-101-61-9-62  web2]# vim index.html
+[root@ip-101-61-9-62  web2]# cd ..
+[root@ip-101-61-9-62 webapps]# cd ..
+[root@ip-101-61-9-62  apache-tomcat-9.0.71]# ls
+bin  BUILDING.txt  conf  CONTRIBUTING.md  lib  LICENSE  logs  NOTICE  README.md  RELEASE-NOTES  RUNNING.txt  temp  webapps  work
+[root@ip-101-61-9-62  apache-tomcat-9.0.71]# cd conf/
+[root@ip-101-61-9-62  conf]# ls
+Catalina  catalina.policy  catalina.properties  context.xml  jaspic-providers.xml  jaspic-providers.xsd  logging.properties  server.xml  tomcat-users.xml  tomcat-users.xsd  web.xml
+[root@ip-101-61-9-62  conf]# vim server.xml 
+[root@ip-101-61-9-62  conf]# vim server.xml 
+[root@ip-101-61-9-62 conf]# cd .. /b
+bin/  boot/ 
+[root@ip-101-61-9-62  conf]# cd .. /bin
+[root@ip-101-61-9-62  apache-tomcat-9.0.71]# cd bin/
+[root@ip-101-61-9-62  bin]# ls
+bootstrap.jar  catalina-tasks.xml  commons-daemon.jar            configtest.sh  digest.sh     setclasspath.bat  shutdown.sh  tomcat-juli.jar       tool-wrapper.sh
+catalina.bat   ciphers.bat         commons-daemon-native.tar.gz  daemon.sh      makebase.bat  setclasspath.sh   startup.bat  tomcat-native.tar.gz  version.bat
+catalina.sh    ciphers.sh          configtest.bat                digest.bat     makebase.sh   shutdown.bat      startup.sh   tool-wrapper.bat      version.sh
+[root@ip-101-61-9-62  bin]# ./startup.sh 
+Using CATALINA_BASE:   /root/apache-tomcat-9.0.71
+Using CATALINA_HOME:   /root/apache-tomcat-9.0.71
+Using CATALINA_TMPDIR: /root/apache-tomcat-9.0.71/temp
+Using JRE_HOME:        /
+Using CLASSPATH:       /root/apache-tomcat-9.0.71/bin/bootstrap.jar:/root/apache-tomcat-9.0.71/bin/tomcat-juli.jar
+Using CATALINA_OPTS:   
+Tomcat started.
+[root@ip-101-61-9-62  bin]# ss -ant
+State                   Recv-Q                  Send-Q                                         Local Address:Port                                     Peer Address:Port                   Process                  
+LISTEN                  0                       128                                                  0.0.0.0:111                                           0.0.0.0:*                                               
+LISTEN                  0                       128                                                  0.0.0.0:22                                            0.0.0.0:*                                               
+LISTEN                  0                       100                                                127.0.0.1:25                                            0.0.0.0:*                                               
+ESTAB                   0                       0                                                172.31.7.46:22                                       13.233.177.3:53498                                           
+LISTEN                  0                       1                                         [::ffff:127.0.0.1]:8005                                                *:*                                               
+LISTEN                  0                       128                                                     [::]:111                                              [::]:*                                               
+LISTEN                  0                       100                                                        *:80                                                  *:*                                               
+LISTEN                  0                       128                                                     [::]:22                                               [::]:*                                               
+[root@ip-101-61-9-62  bin]# 
+
+http://65.0.110.175/web2/

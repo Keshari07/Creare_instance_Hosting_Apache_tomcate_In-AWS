@@ -1,0 +1,10 @@
+echo "Switching to branch master"
+git checkout main
+
+echo "Building app..."
+npm run build
+
+echo "Deploying files to server ..."
+scp -r  kubernetes@192.188.50.13:/home/Front/AWS/form_c-dac/dist /var/www/192.188.50.13
+
+echo "Done!"
